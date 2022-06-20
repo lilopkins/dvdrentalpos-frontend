@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Link, Outlet } from "react-router-dom";
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/browse">Browse Films</Link>
+        {/* <Link to="/signin">Sign In</Link> */}
+      </nav>
+      <div className="container">
+        <Outlet />
+      </div>
+      <footer>
+        Copyright &copy; Lily Hopkins 2022
+      </footer>
+    </>
   );
 }
-
-export default App;

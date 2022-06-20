@@ -1,0 +1,49 @@
+.browse .paged-content {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.browse .paged-content > div {
+    flex: 33% 0 1;
+}
+
+.browse .film-card {
+    padding: 1em;
+}
+
+.browse .rating {
+    margin: 0 0.3em;
+    padding: 0.3em;
+    border-radius: 10px;
+}
+
+.browse .rating-G {
+    background-color: #8fe604;
+}
+
+.browse .rating-PG,
+.browse .rating-PG-13,
+.browse .rating-NC-17 {
+    background-color: #e6c404;
+}
+
+.browse .rating-R {
+    background-color: #ff2222;
+    color: #ffffff;
+}
+
+.browse .film-card {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 0.3em;
+}
+
+.browse .film-card .title {
+    font-weight: bold;
+}
+
+.browse .film-card .lang {
+    font-size: 0.7em;
+}
