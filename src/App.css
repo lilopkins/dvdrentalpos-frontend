@@ -3,3 +3,58 @@
     margin: 0 auto;
     padding: 0 1rem;
 }
+
+header {
+    background-color: #303030;
+    color: #dedede;
+    height: 64px;
+}
+
+header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+header .brand-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav a {
+    color: #dedede;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+header nav a.active {
+    color: #bcbcbc;
+    border-bottom: 2px solid #bcbcbc;
+    margin-bottom: -2px;
+}
+
+@media (prefers-reduced-motion) {
+    header nav a {
+        transition: none;
+    }
+}
+
+header nav a:hover {
+    color: #bcbcbc;
+    border-bottom: 2px solid #bcbcbc;
+    margin-bottom: -2px;
+}
+
+footer {
+    background-color: #303030;
+    color: #dedede;
+    padding: 2em 0;
+    margin-top: 2em;
+}

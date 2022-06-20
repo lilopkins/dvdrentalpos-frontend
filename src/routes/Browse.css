@@ -5,8 +5,10 @@
     flex-wrap: wrap;
 }
 
-.browse .paged-content > div {
+.browse .paged-content > a {
     flex: 33% 0 1;
+    text-decoration: none;
+    color: #000;
 }
 
 .browse .film-card {

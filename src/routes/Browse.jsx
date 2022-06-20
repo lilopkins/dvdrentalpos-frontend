@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Pageable from "../components/Pageable";
 import "./Browse.css";
 
@@ -10,7 +11,7 @@ export default function Browse() {
                 uri="/films"
                 sortable-by={{'title': 'Film Title'}}
                 generator={item => (
-                    <div>
+                    <Link to={'/film/' + item.id}>
                         <div className="film-card">
                             <div>
                                 <span className="title">{item.title}</span>
@@ -19,7 +20,7 @@ export default function Browse() {
                             <span className="lang">{item.language.name}</span>
                             <p>{item.description}</p>
                         </div>
-                    </div>
+                    </Link>
                 )} />
         </div>
     );
