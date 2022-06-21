@@ -11,7 +11,7 @@ export default function Browse() {
                 uri="/films"
                 sortable-by={{'title': 'Film Title'}}
                 generator={item => (
-                    <Link to={'/film/' + item.id}>
+                    <Link to={'/film/' + item.id} key={item.id}>
                         <div className="film-card">
                             <div>
                                 <span className="title">{item.title}</span>

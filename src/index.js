@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Link, Route, Routes } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import Browse from './routes/Browse';
 import SignIn from './routes/SignIn';
 import FilmDetail from './routes/FilmDetail';
+import Index from './routes/Index';
+import ActorDetail from './routes/ActorDetail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,11 +16,14 @@ root.render(
     <Router>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index />
+          <Route index element={<Index />} />
 
           {/* Film browsing */}
           <Route path="browse" element={<Browse />} />
           <Route path="film/:id" element={<FilmDetail />} />
+
+          {/* Actor browsing */}
+          <Route path="actor/:id" element={<ActorDetail />} />
 
           {/* Authentication */}
           <Route path="signin" element={<SignIn />} />
@@ -30,7 +35,7 @@ root.render(
           <Route path="staff/manage/users" />
 
           {/* 404 */}
-          <Route path="*" element={<div>404</div>} />
+          <Route path="*" element={<><h1>404 Not Found</h1><Link to="/">Head home?</Link></>} />
         </Route>
       </Routes>
     </Router>

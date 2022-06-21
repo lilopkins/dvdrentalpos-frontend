@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import LoadingSpinner from './LoadingSpinner';
 import config from "../config";
 
 export default function Pageable(props) {
@@ -32,9 +33,7 @@ export default function Pageable(props) {
 
     if (data === null) {
         return (
-            <div>
-                Loading...
-            </div>
+            <LoadingSpinner />
         );
     } else {
         return (
@@ -65,7 +64,10 @@ export default function Pageable(props) {
                     </div>
                     <div className="items-per-page">
                         Items per page:&nbsp;
-                        <select onChange={e => setItemsPerPage(e.target.value)} value={itemsPerPage}>
+                        <select onChange={e => {
+                                setItemsPerPage(e.target.value);
+                                setPage(0);
+                            }} value={itemsPerPage}>
                             <option>20</option>
                             <option>50</option>
                             <option>100</option>

@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import "./App.css";
 import config from "./config";
 
@@ -8,7 +8,7 @@ export default function App() {
     <>
       <header>
         <div className="container">
-          <span className="brand-title">Movie Rentals</span>
+          <Link to="/" className="brand-title">FilmBuster Movie Rentals</Link>
           <nav>
             <NavLink to="/" className={activeLambda}>Home</NavLink>
             <NavLink to="/browse" className={activeLambda}>Browse Films</NavLink>

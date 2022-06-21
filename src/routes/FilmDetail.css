@@ -1,0 +1,13 @@
+.film-detail .title {
+    margin-bottom: 0;
+}
+
+.film-detail .subtext {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.film-detail .subtext:after {
+    content: '\a';
+    white-space: pre;
+}

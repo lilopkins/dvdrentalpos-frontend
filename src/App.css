@@ -20,6 +20,13 @@ header > .container {
 header .brand-title {
     font-size: 1.5rem;
     font-weight: bold;
+    text-decoration: none;
+    color: #dedede;
+    transition: 0.2s;
+}
+
+header .brand-title:hover {
+    color: #bcbcbc;
 }
 
 header nav {
@@ -44,6 +51,14 @@ header nav a.active {
     header nav a {
         transition: none;
     }
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    color: #555555;
 }
 
 header nav a:hover {
