@@ -11,6 +11,7 @@ export default function Pageable(props) {
     const pageProp = +props.page || 0;
     const generator = props.generator || (item => <div>{item.title}</div>);
 
+    const [error, setError] = useState(null);
     const [data, setData] = useState(null);
     const [page, setPage] = useState(pageProp);
     const [sortBy, setSortBy] = useState('__default__');
@@ -28,10 +29,18 @@ export default function Pageable(props) {
         }
         fetch(url)
             .then(res => res.json())
-            .then(setData);
+            .then(setData)
+            .catch(setError);
     }, [uri, page, sortBy, itemsPerPage]);
 
-    if (data === null) {
+    if (error !== null) {
+        return (
+            <div className="error">
+                <h1>Error</h1>
+                <p>{error.message}</p>
+            </div>
+        );
+    } else if (data === null) {
         return (
             <LoadingSpinner />
         );

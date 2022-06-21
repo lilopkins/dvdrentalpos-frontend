@@ -6,19 +6,27 @@ import './FilmDetail.css';
 
 export default function FilmDetail() {
     let { id } = useParams();
-    let [actor, setActor] = useState(null);
-    let [films, setFilms] = useState(null);
+    const [error, setError] = useState(null);
+    const [actor, setActor] = useState(null);
+    const [films, setFilms] = useState(null);
 
     useEffect(() => {
         fetch(`${config.API_BASE}/actors/${id}`)
             .then(res => res.json())
-            .then(setActor);
+            .then(setActor)
+            .catch(setError);
         fetch(`${config.API_BASE}/actors/${id}/films`)
             .then(res => res.json())
-            .then(setFilms);
+            .then(setFilms)
+            .catch(setError);
     }, [id]);
 
-    if (actor == null)
+    if (error !== null)
+        return <div className="error">
+            <h1>Error</h1>
+            <p>{error.message}</p>
+        </div>;
+    else if (actor == null)
         return <LoadingSpinner />;
     else
         return (
