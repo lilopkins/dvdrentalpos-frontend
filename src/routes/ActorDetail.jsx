@@ -31,12 +31,11 @@ export default function FilmDetail() {
     else
         return (
             <div className="actor-detail">
-                <h1 className="name">{actor.firstName} {actor.lastName}</h1>
-                <h2>Films</h2>
+                <h1 className="name">{actor.firstName} {actor.lastName} Films</h1>
                 <ul>
                     {films === null ? <LoadingSpinner /> : films.sort((a, b) => a.id - b.id).map(film => (
                         <li key={film.id}>
-                            <Link to={`/films/${film.id}`}>{film.title}</Link>
+                            <Link to={`/film/${film.id}`}>{film.title}</Link>
                         </li>
                     ))}
                 </ul>

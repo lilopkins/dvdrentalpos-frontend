@@ -61,6 +61,11 @@ a:hover {
     color: #555555;
 }
 
+hr {
+    border: none;
+    border-bottom: 1px solid #bbbbbb;
+}
+
 header nav a:hover {
     color: #bcbcbc;
     border-bottom: 2px solid #bcbcbc;
