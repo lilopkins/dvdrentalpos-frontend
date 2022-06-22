@@ -33,12 +33,23 @@ header nav {
     display: flex;
 }
 
-header nav a {
+header nav a,
+header nav button,
+header nav span {
     color: #dedede;
+    background: none;
     text-decoration: none;
     padding: 0.5rem 1rem;
     font-weight: bold;
+    border: none;
     transition: 0.2s;
+}
+
+header nav a:hover,
+header nav button:hover {
+    color: #bcbcbc;
+    border-bottom: 2px solid #bcbcbc;
+    margin-bottom: -2px;
 }
 
 header nav a.active {
@@ -64,12 +75,6 @@ a:hover {
 hr {
     border: none;
     border-bottom: 1px solid #bbbbbb;
-}
-
-header nav a:hover {
-    color: #bcbcbc;
-    border-bottom: 2px solid #bcbcbc;
-    margin-bottom: -2px;
 }
 
 footer {

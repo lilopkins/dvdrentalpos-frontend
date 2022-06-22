@@ -8,5 +8,5 @@ export default function LoadingSpinner() {
         setTimeout(() => setExtra("Still loading..."), 5000);
     }, []);
 
-    return <div className="loading-spinner"><div class="lds-dual-ring"></div><div>{extra}</div></div>;
+    return <div className="loading-spinner"><div className="lds-dual-ring"></div><div>{extra}</div></div>;
 }
