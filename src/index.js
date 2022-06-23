@@ -9,6 +9,9 @@ import SignIn from './routes/SignIn';
 import FilmDetail from './routes/FilmDetail';
 import Index from './routes/Index';
 import ActorDetail from './routes/ActorDetail';
+import Profile from './routes/Profile';
+import BrowseActors from './routes/BrowseActors';
+import Rent from './routes/Rent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,16 +26,17 @@ root.render(
           <Route path="film/:id" element={<FilmDetail />} />
 
           {/* Actor browsing */}
+          <Route path="actors" element={<BrowseActors />} />
           <Route path="actor/:id" element={<ActorDetail />} />
 
           {/* Authentication */}
           <Route path="signin" element={<SignIn />} />
 
-          {/* Staff */}
-          <Route path="staff/manage/films" />
-          <Route path="staff/manage/actors" />
-          <Route path="staff/manage/rentals" />
-          <Route path="staff/manage/users" />
+          {/* Profile */}
+          <Route path="profile" element={<Profile />} />
+
+          {/* Rental */}
+          <Route path="watch" element={<Rent />} />
 
           {/* 404 */}
           <Route path="*" element={<><h1>404 Not Found</h1><Link to="/">Head home?</Link></>} />

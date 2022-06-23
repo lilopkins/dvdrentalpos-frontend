@@ -58,7 +58,7 @@ export default function Pageable(props) {
                             {Object.keys(sortableBy).map(key => {
                                 if (key === '__default__') {
                                     return (
-                                        <option value={key}>{sortableBy[key]}</option>
+                                        <option value={key} key={key}>{sortableBy[key]}</option>
                                     );
                                 } else {
                                     return (

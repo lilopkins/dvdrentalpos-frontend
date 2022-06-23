@@ -9,7 +9,7 @@ export default function SignIn() {
     const password = useRef();
     const [error, setError] = useState(null);
     // eslint-disable-next-line
-    const [auth, setAuth] = useOutletContext();
+    const [auth, setAuth, splitAuth] = useOutletContext();
     const navigate = useNavigate();
 
     const signIn = e => {

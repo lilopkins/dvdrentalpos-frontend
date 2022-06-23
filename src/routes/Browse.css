@@ -11,6 +11,11 @@
     color: #000;
 }
 
+.browse label:after {
+    content: '\a';
+    white-space: pre;
+}
+
 .browse .film-card {
     padding: 1em;
 }
